@@ -1,0 +1,167 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "zebra-to-pdf",
+  "title": "Zebra to PDF",
+  "description": "Convert Zebra to PDF File",
+  "icon": "extension-icon.png",
+  "author": "joaoxmb",
+  "platforms": [
+    "macOS",
+    "Windows"
+  ],
+  "categories": [
+    "Documentation"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "zebra-to-pdf",
+      "title": "Zebra to PDF",
+      "subtitle": "Convert your Zebra file",
+      "description": "Convert Zebra to PDF File",
+      "mode": "no-view"
+    }
+  ],
+  "preferences": [
+    {
+      "title": "Advanced",
+      "name": "showCopyTip",
+      "type": "checkbox",
+      "required": false,
+      "label": "Show Copy Tip",
+      "description": "Display a prompt when copying is successful.",
+      "default": true
+    },
+    {
+      "name": "showLastCopy",
+      "type": "checkbox",
+      "required": false,
+      "label": "Show Last Copy",
+      "description": "Show the path or URL of the most recent copy in the subtitle of the command.",
+      "default": true
+    },
+    {
+      "name": "showTabTitle",
+      "type": "checkbox",
+      "required": false,
+      "label": "Show Tab Title",
+      "description": "Show the tab title of the browser when copying the URL of the current browser tab.",
+      "default": false
+    },
+    {
+      "name": "useTildeForHome",
+      "type": "checkbox",
+      "required": false,
+      "label": "Use Tilde for Home Directory",
+      "description": "Replace the home directory in copied paths with '~' for a cleaner look.",
+      "default": false
+    },
+    {
+      "name": "multiPathSeparator",
+      "type": "dropdown",
+      "required": false,
+      "title": "Multi-path Separator",
+      "description": "The separator between paths when copying multiple file paths.",
+      "default": "\n",
+      "data": [
+        {
+          "title": "⏎",
+          "value": "\n"
+        },
+        {
+          "title": "␣",
+          "value": " "
+        },
+        {
+          "title": ",",
+          "value": ","
+        },
+        {
+          "title": ";",
+          "value": ";"
+        },
+        {
+          "title": ":",
+          "value": ":"
+        }
+      ]
+    },
+    {
+      "name": "copyUrlContent",
+      "type": "dropdown",
+      "required": false,
+      "title": "URL Format",
+      "description": "When copying URLs, select what to copy.",
+      "default": "Original",
+      "data": [
+        {
+          "title": "Original",
+          "value": "Original"
+        },
+        {
+          "title": "Protocol://host/pathname",
+          "value": "Protocol://host/pathname"
+        },
+        {
+          "title": "Protocol://host",
+          "value": "Protocol://host"
+        },
+        {
+          "title": "Host",
+          "value": "Host"
+        }
+      ]
+    },
+    {
+      "name": "copyWhenUnSupported",
+      "type": "dropdown",
+      "required": false,
+      "title": "Unsupported App Action",
+      "description": "When copying, select what to copy when the app is not supported.",
+      "default": "windowTitle",
+      "data": [
+        {
+          "title": "None",
+          "value": "none"
+        },
+        {
+          "title": "Window Title",
+          "value": "windowTitle"
+        },
+        {
+          "title": "App Name",
+          "value": "appName"
+        },
+        {
+          "title": "App Path",
+          "value": "appPath"
+        },
+        {
+          "title": "Bundle ID",
+          "value": "bundleId"
+        }
+      ]
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.84.6",
+    "@raycast/utils": "^1.18.0",
+    "jszip": "^3.10.1",
+    "node-fetch": "^3.3.2",
+    "parse-url": "^9.2.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "22.8.2",
+    "@types/react": "18.3.12",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint"
+  }
+}
