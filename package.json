@@ -3,7 +3,7 @@
   "name": "zebra-to-pdf",
   "title": "Zebra to PDF",
   "description": "Convert Zebra to PDF File",
-  "icon": "extension-icon.png",
+  "icon": "zebra-to-pdf.png",
   "author": "joaoxmb",
   "platforms": [
     "macOS",
